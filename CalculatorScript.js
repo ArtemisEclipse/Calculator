@@ -84,12 +84,15 @@ function addGlobalEventListener(type, selector, callback){
         if (e.target.matches(selector)){
             callback(e)
           }
-   })
+        })
+   }
 
    addGlobalEventListener("click","div.button", e =>{
     var screenStorage = [];
-    let display = document.getElementsByClassName("screen")
-    switch(number){
+    let display = document.getElementById("screen")
+    console.log(display)
+    let btnClicked = (e.target.id);
+    switch(btnClicked){
         case '1' :
             display.append("1")
         break;
@@ -120,9 +123,31 @@ function addGlobalEventListener(type, selector, callback){
         case '0' :
             display.append("0")
         break;
+        case 'plus':
+            var operator = btnClicked;
+            screenStorage[0] = Number(display);
+            display.innerHTML = "";
+        break;
+        case 'equals' :
+            console.log(operator)
+            if(operator == 'plus'){
+                screenStorage[1] = screenStorage[0] + display;
+                display = screenStorage[1];
+            }
+            else if(operator == 'minus'){
+                screenStorage[1] = screenStorage[0] - display;
+                display = screenStorage[1];
+            }
+            else if(operator == 'multiply'){
+                screenStorage[1] = screenStorage[0] * display;
+                display = screenStorage[1];
+            }
+            else if(operator == 'divide'){
+                screenStorage[1] = screenStorage[0] / display;
+                display = screenStorage[1];
+            }
         default:
             console.log("No button was clicked.")
-        break;    
-        
+        break;  
     }
    })
