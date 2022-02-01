@@ -1,12 +1,12 @@
-window.addEventListener('load', (event) =>{
+/*window.addEventListener('load', (event) =>{
 console.log(event);
-var screenStorage = [];
+
 var operator;
-var element = document.getElementsByClassName("button")
-console.log(element);
+var elements = document.getElementsByClassName("button")
+console.log(elements);
 function clickNumber(event){
 let display = document.getElementsByClassName("screen")
-element.foreach()
+elements.foreach()
 console.log(number);
 switch(number){
     case '#1' :
@@ -77,4 +77,52 @@ function results(){
             console.log('no operator was selected')
         break;            
     }
-}
+}*/
+//use this
+function addGlobalEventListener(type, selector, callback){
+     document.addEventListener(type, e => {
+        if (e.target.matches(selector)){
+            callback(e)
+          }
+   })
+
+   addGlobalEventListener("click","div.button", e =>{
+    var screenStorage = [];
+    let display = document.getElementsByClassName("screen")
+    switch(number){
+        case '1' :
+            display.append("1")
+        break;
+        case '2' :
+            display.append("2")
+        break;
+        case '3' :
+            display.append("3")
+        break;
+        case '4' :
+            display.append("4")
+        break;
+        case '5' :
+            display.append("5")
+        break;
+        case '6' :
+            display.append("6")
+        break;
+        case '7' :
+            display.append("7")
+        break;
+        case '8' :
+            display.append("8")
+        break;
+        case '9' :
+            display.append("9")
+        break;
+        case '0' :
+            display.append("0")
+        break;
+        default:
+            console.log("No button was clicked.")
+        break;    
+        
+    }
+   })
