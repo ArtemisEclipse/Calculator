@@ -210,7 +210,8 @@ function buttonPressed(e){
     keyPress = e.code;
     let numberDisplay = document.getElementById("lowerRightScreen");
     let upperDisplay = document.getElementById("upperScreen");
-    console.log(keyPress)
+    let negativeDisplay = document.getElementById("lowerLeftScreen");
+    console.log(keyPress);
     console.log(numberDisplay);
     switch(keyPress){
         //Number pad Keys
