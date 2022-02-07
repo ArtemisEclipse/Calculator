@@ -5,15 +5,32 @@
     border-style: double;
 }
 /* Table Content Styling */
-#screen{
+.screen{
+    display: grid;
     background-color: white;
     border: 4px black;
     border-style: solid;
-    height: 25px;
+    height: 40px;
     padding: 10px;
     margin: 10px;
     font-size: large;
     text-align: right;
+}
+#lowerRightScreen{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-column: span;
+}
+#lowerLeftScreen{
+    grid-column-start: 1;
+    grid-row-start: 2;
+    text-align: left;
+}
+#upperScreen{
+    text-align: right;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-column: span;
 }
 .button{
     background-color: darkgray;
@@ -29,11 +46,20 @@
 .button:hover{
     box-shadow: 2px 2px 2px 2px white;
 }
-/*
-probably needs to be styled in js
-.button:visited{
+
+
+.btnClicked{
+    background-color: darkgray;
+    border: 4px;
+    border-style: hidden;
+    border-radius: 10px;
+    height: 15px;
+    padding: 10px;
+    margin: 10px;
+    font-size: medium;
+    text-align: center;
     box-shadow: .5px .5px .5px .5px white;
-}*/
+}
 #btn0{
     text-align: right;
 }
